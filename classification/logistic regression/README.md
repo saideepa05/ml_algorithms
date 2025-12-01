@@ -13,16 +13,16 @@ The goal is simple:
 
 Logistic Regression is a **binary classification** algorithm.
 
-Given patient features (age, cholesterol, blood pressure…), it predicts:
+Given patient features (age, cholesterol, blood pressure…), it predicts
 
-\[
+$$
 P(y = 1 \mid x)
-\]
+$$
 
 where:
 
-- \(y = 1\) → heart disease  
-- \(y = 0\) → no heart disease  
+- $y = 1$ → heart disease  
+- $y = 0$ → no heart disease  
 
 The model outputs a **probability** between 0 and 1 and then converts it into a class (0 or 1).
 
@@ -33,23 +33,26 @@ The model outputs a **probability** between 0 and 1 and then converts it into a 
 Logistic Regression works in **three steps**:
 
 ### ✔ 1. Compute a linear score  
-\[
+
+$$
 z = w^\top x + b
-\]
+$$
 
 ### ✔ 2. Squash it into a probability  
-\[
+
+$$
 \hat{p} = \sigma(z) = \frac{1}{1 + e^{-z}}
-\]
+$$
 
 ### ✔ 3. Convert probability → class  
-\[
-\hat{y} = 
+
+$$
+\hat{y} =
 \begin{cases}
 1 & \text{if } \hat{p} \ge 0.5 \\
 0 & \text{otherwise}
 \end{cases}
-\]
+$$
 
 ---
 
@@ -57,17 +60,17 @@ z = w^\top x + b
 
 Let:
 
-- \(x \in \mathbb{R}^d\): feature vector  
-- \(w \in \mathbb{R}^d\): weights  
-- \(b \in \mathbb{R}\): bias  
+- $x \in \mathbb{R}^d$: feature vector  
+- $w \in \mathbb{R}^d$: weights  
+- $b \in \mathbb{R}$: bias  
 
 The model computes:
 
-\[
+$$
 z = w^\top x + b = w_1 x_1 + w_2 x_2 + \dots + w_d x_d + b
-\]
+$$
 
-This number \(z\) can be any real value — positive, negative, small, or large.
+This number $z$ can be any real value — positive, negative, small, or large.
 
 ---
 
@@ -75,21 +78,21 @@ This number \(z\) can be any real value — positive, negative, small, or large.
 
 The **sigmoid function** converts the raw score into a probability:
 
-\[
+$$
 \sigma(z) = \frac{1}{1 + e^{-z}}
-\]
+$$
 
 Properties:
 
-- If \(z\) is large and positive → \(\sigma(z) \approx 1\)  
-- If \(z\) is large and negative → \(\sigma(z) \approx 0\)  
-- If \(z = 0\) → \(\sigma(z) = 0.5\)
+- If $z$ is large and positive → $\sigma(z) \approx 1$  
+- If $z$ is large and negative → $\sigma(z) \approx 0$  
+- If $z = 0$ → $\sigma(0) = 0.5$  
 
 Thus,
 
-\[
+$$
 \hat{p}(y=1 \mid x) = \sigma(w^\top x + b)
-\]
+$$
 
 This is the core of logistic regression.
 
@@ -99,13 +102,13 @@ This is the core of logistic regression.
 
 To make a final decision:
 
-\[
-\hat{y} = 
+$$
+\hat{y} =
 \begin{cases}
 1 & \text{if } \hat{p} \ge 0.5 \\
 0 & \text{if } \hat{p} < 0.5
 \end{cases}
-\]
+$$
 
 ---
 
@@ -113,30 +116,32 @@ To make a final decision:
 
 Let:
 
-- \(p = P(y=1 \mid x)\)
-- \(1 - p = P(y=0 \mid x)\)
+- $p = P(y=1 \mid x)$  
+- $1 - p = P(y=0 \mid x)$  
 
-### Odds:
-\[
+**Odds:**
+
+$$
 \text{odds} = \frac{p}{1-p}
-\]
+$$
 
-### Log-odds (logit):
-\[
+**Log-odds (logit):**
+
+$$
 \log\left( \frac{p}{1-p} \right)
-\]
+$$
 
 Logistic regression assumes:
 
-\[
+$$
 \log\left(\frac{p}{1-p}\right) = w^\top x + b
-\]
+$$
 
-Solving for \(p\):
+Solving for $p$:
 
-\[
+$$
 p = \frac{1}{1 + e^{-(w^\top x + b)}}
-\]
+$$
 
 This gives back the **sigmoid**, so logistic regression models **linear log-odds**.
 
@@ -148,32 +153,32 @@ To train the model, we need a way to measure **how wrong** predictions are.
 
 For one example:
 
-- true label: \(y \in \{0, 1\}\)  
-- predicted probability: \(p\)
+- true label: $y \in \{0, 1\}$  
+- predicted probability: $p$
 
 The binary cross-entropy loss is:
 
-\[
+$$
 \ell(y, p)
 = -\left[ y \log(p) + (1 - y)\log(1 - p) \right]
-\]
+$$
 
 Intuition:
 
-- If \(y = 1\) and \(p\) is close to 1 → loss is small  
-- If \(y = 1\) and \(p\) is close to 0 → loss explodes  
-- If \(y = 0\) and \(p\) is close to 0 → small  
-- If \(y = 0\) and \(p\) is close to 1 → huge  
+- If $y = 1$ and $p$ is close to 1 → loss is small  
+- If $y = 1$ and $p$ is close to 0 → loss explodes  
+- If $y = 0$ and $p$ is close to 0 → small  
+- If $y = 0$ and $p$ is close to 1 → huge  
 
-For all \(n\) samples:
+For all $n$ samples:
 
-\[
-J(w,b) = 
+$$
+J(w,b) =
 \frac{1}{n}
 \sum_{i=1}^{n}
-- \Big[ y^{(i)} \log(p^{(i)}) 
+- \Big[ y^{(i)} \log(p^{(i)})
 + (1 - y^{(i)}) \log(1 - p^{(i)}) \Big]
-\]
+$$
 
 This is the **cost function** we minimize.
 
@@ -181,21 +186,22 @@ This is the **cost function** we minimize.
 
 # 8. Why We Need Gradients
 
-Our goal is to find parameters \(w, b\) that minimize \(J(w,b)\).
+Our goal is to find parameters $w, b$ that minimize $J(w,b)$.
 
 We use **gradient descent**:
 
-\[
+$$
 w := w - \alpha \frac{\partial J}{\partial w}
-\]
-\[
+$$
+
+$$
 b := b - \alpha \frac{\partial J}{\partial b}
-\]
+$$
 
 We need:
 
-- \( \frac{\partial J}{\partial w} \): how much each weight affects loss  
-- \( \frac{\partial J}{\partial b} \): how much bias affects loss  
+- $\dfrac{\partial J}{\partial w}$: how much each weight affects loss  
+- $\dfrac{\partial J}{\partial b}$: how much bias affects loss  
 
 These are called **gradients**.
 
@@ -205,62 +211,63 @@ These are called **gradients**.
 
 ### For one example:
 
-- \(z = w^\top x + b\)  
-- \(p = \sigma(z)\)  
+- $z = w^\top x + b$  
+- $p = \sigma(z)$  
 - Loss:  
-\[
+
+$$
 \ell(y,p) = -\left[ y\log(p) + (1-y)\log(1-p) \right]
-\]
+$$
 
 We want:
 
-\[
+$$
 \frac{\partial \ell}{\partial w_j}
-\]
+$$
 
-Use **chain rule**:
+Use the **chain rule**:
 
-\[
+$$
 \frac{\partial \ell}{\partial w_j}
-= 
+=
 \frac{\partial \ell}{\partial p}
 \cdot
 \frac{\partial p}{\partial z}
 \cdot
 \frac{\partial z}{\partial w_j}
-\]
+$$
 
-### 1. Derivative of loss w.r.t probability:
+### 1. Derivative of loss w.r.t. probability:
 
-\[
+$$
 \frac{\partial \ell}{\partial p}
 = -\left[ \frac{y}{p} - \frac{1-y}{1-p} \right]
-\]
+$$
 
 ### 2. Derivative of sigmoid:
 
-\[
+$$
 \frac{\partial p}{\partial z} = p(1 - p)
-\]
+$$
 
 ### 3. Derivative of linear score:
 
-\[
+$$
 \frac{\partial z}{\partial w_j} = x_j
-\]
+$$
 
 ### Combine them:
 
-\[
+$$
 \frac{\partial \ell}{\partial w_j}
 = (p - y)\, x_j
-\]
+$$
 
 Bias gradient:
 
-\[
+$$
 \frac{\partial \ell}{\partial b} = (p - y)
-\]
+$$
 
 ---
 
@@ -268,64 +275,65 @@ Bias gradient:
 
 Let:
 
-- \(X\): matrix of features (shape: \(n \times d\))  
-- \(p\): predicted probabilities (vector of size \(n\))  
-- \(y\): true labels (vector of size \(n\))  
+- $X$: matrix of features (shape $n \times d$)  
+- $p$: predicted probabilities (vector of size $n$)  
+- $y$: true labels (vector of size $n$)  
 
 Then:
 
-### Weight gradient (vector form):
+**Weight gradient (vector form):**
 
-\[
+$$
 \frac{\partial J}{\partial w}
 =
 \frac{1}{n}
 X^\top (p - y)
-\]
+$$
 
-### Bias gradient:
+**Bias gradient:**
 
-\[
+$$
 \frac{\partial J}{\partial b}
 =
 \frac{1}{n}
 \sum_{i=1}^{n} (p^{(i)} - y^{(i)})
-\]
+$$
 
 These two formulas are the **heart of the learning process**.
 
 ---
 
-# 11. Gradient Descent (How Model Learns)
+# 11. Gradient Descent (How the Model Learns)
 
 Once gradients are computed:
 
-\[
+$$
 w := w - \alpha \frac{\partial J}{\partial w}
-\]
-\[
+$$
+
+$$
 b := b - \alpha \frac{\partial J}{\partial b}
-\]
+$$
 
 Where:
 
-- \( \alpha \) = learning rate  
-- subtracting gradient = move **downhill**  
-- repeating this many times = model slowly improves  
+- $\alpha$ = learning rate  
+- subtracting the gradient means we move **downhill**  
+- repeating this many times makes the model slowly improve  
 
-This loop is repeated for thousands of iterations.
+This loop is repeated for many iterations.
 
 ---
 
 # 12. Conceptual Training Pipeline (No Code)
 
-1. Initialize \(w\) and \(b\)  
+1. Initialize $w$ and $b$  
 2. Repeat until convergence:
-   - Compute linear scores \(z\)  
-   - Compute probabilities \(p\)  
+   - Compute linear scores $z$  
+   - Compute probabilities $p$  
    - Compute loss  
    - Compute gradients  
-   - Update \(w\) and \(b\)  
+   - Update $w$ and $b$  
 3. Use final parameters for prediction
 
 ---
@@ -333,16 +341,19 @@ This loop is repeated for thousands of iterations.
 # 13. Summary
 
 - Logistic Regression predicts probability using  
-  \[
-  \hat{p} = \sigma(w^\top x + b)
-  \]
+
+$$
+\hat{p} = \sigma(w^\top x + b)
+$$
+
 - Loss is **binary cross-entropy**  
+
 - Gradients come from  
-  \[
-  \frac{\partial \ell}{\partial w_j} = (p - y)x_j
-  \]
-- Model learns by **gradient descent**  
-- No ML libraries needed — only math + NumPy
+
+$$
+\frac{\partial \ell}{\partial w_j} = (p - y)x_j
+$$
+
+- The model learns by **gradient descent**  
 
 This README gives the **complete mathematical foundation** for logistic regression from scratch.
-
