@@ -159,11 +159,12 @@ Intuition:
 
 
 For all $n$ samples:
-$$
-\J(w, b) = (1/n) * Σ from i=1 to n [
+J(w, b) = (1/n) * Σ from i=1 to n [
     - y(i) * log(p(i))
     - (1 - y(i)) * log(1 - p(i))
 ]
-$$
+
+J(w, b) = (1/n) * SUM(i=1 to n)[ -y(i)*log(p(i)) - (1-y(i))*log(1-p(i)) ]
+
 
 This is the **cost function** we minimize.
