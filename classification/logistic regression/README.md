@@ -63,9 +63,11 @@ Properties:
 - If $z$ is large and negative → $\sigma(z) \approx 0$  
 - If $z = 0$ → $\sigma(0) = 0.5$  
 Thus,
+
 $$
 \hat{p}(y=1 \mid x) = \sigma(w^\top x + b)
 $$
+
 This is the core of logistic regression.
 
 # 5. Step 3 — Probability → Class
