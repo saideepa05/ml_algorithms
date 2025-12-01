@@ -32,19 +32,19 @@ The model outputs a **probability** between 0 and 1 and then converts it into a 
 
 Logistic Regression works in **three steps**:
 
-### ✔ 1. Compute a linear score  
+### 1. Compute a linear score  
 
 $$
 z = w^\top x + b
 $$
 
-### ✔ 2. Squash it into a probability  
+### 2. Squash it into a probability  
 
 $$
 \hat{p} = \sigma(z) = \frac{1}{1 + e^{-z}}
 $$
 
-### ✔ 3. Convert probability → class  
+### 3. Convert probability → class  
 
 $$
 \hat{y} =
