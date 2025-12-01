@@ -1,13 +1,12 @@
 # Logistic Regression — From Scratch (Mathematical Explanation)
 
-This repository contains an implementation of **Logistic Regression from scratch** using NumPy, applied to a Heart Disease Prediction dataset.  
+This contains an implementation of **Logistic Regression from scratch** using NumPy, applied to a Heart Disease Prediction dataset.  
 This README explains the **intuition**, **mathematics**, and **learning process** behind logistic regression without using any external ML libraries.
 
 The goal is simple:
 
-> Understand *exactly* how logistic regression works — how it makes predictions, how we measure error, and how the model learns through gradient descent.
+Understand exactly how logistic regression works — how it makes predictions, how we measure error, and how the model learns through gradient descent.
 
----
 
 # 1. What Logistic Regression Does
 
@@ -25,8 +24,6 @@ where:
 - $y = 0$ → no heart disease  
 
 The model outputs a **probability** between 0 and 1 and then converts it into a class (0 or 1).
-
----
 
 # 2. The Model: Three Steps
 
@@ -54,8 +51,6 @@ $$
 \end{cases}
 $$
 
----
-
 # 3. Step 1 — Linear Score
 
 Let:
@@ -71,8 +66,6 @@ z = w^\top x + b = w_1 x_1 + w_2 x_2 + \dots + w_d x_d + b
 $$
 
 This number $z$ can be any real value — positive, negative, small, or large.
-
----
 
 # 4. Step 2 — Sigmoid: Score → Probability
 
@@ -96,8 +89,6 @@ $$
 
 This is the core of logistic regression.
 
----
-
 # 5. Step 3 — Probability → Class
 
 To make a final decision:
@@ -109,8 +100,6 @@ $$
 0 & \text{if } \hat{p} < 0.5
 \end{cases}
 $$
-
----
 
 # 6. Log-Odds Interpretation (Why “Logistic”?)
 
@@ -144,8 +133,6 @@ p = \frac{1}{1 + e^{-(w^\top x + b)}}
 $$
 
 This gives back the **sigmoid**, so logistic regression models **linear log-odds**.
-
----
 
 # 7. Binary Cross-Entropy Loss
 
