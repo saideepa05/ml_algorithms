@@ -11,9 +11,11 @@ Understand exactly how logistic regression works — how it makes predictions, h
 Logistic Regression is a **binary classification** algorithm.
 
 Given patient features (age, cholesterol, blood pressure…), it predicts
+
 $$
 P(y = 1 \mid x)
 $$
+
 where:
 - $y = 1$ → heart disease  
 - $y = 0$ → no heart disease  
@@ -44,20 +46,25 @@ $$
 
 # 3. Step 1 — Linear Score
 Let:
+
 - $x \in \mathbb{R}^d$: feature vector  
 - $w \in \mathbb{R}^d$: weights  
 - $b \in \mathbb{R}$: bias  
 The model computes:
+
 $$
 z = w^\top x + b = w_1 x_1 + w_2 x_2 + \dots + w_d x_d + b
 $$
+
 This number $z$ can be any real value — positive, negative, small, or large.
 
 # 4. Step 2 — Sigmoid: Score → Probability
 The **sigmoid function** converts the raw score into a probability:
+
 $$
 \sigma(z) = \frac{1}{1 + e^{-z}}
 $$
+
 Properties:
 - If $z$ is large and positive → $\sigma(z) \approx 1$  
 - If $z$ is large and negative → $\sigma(z) \approx 0$  
@@ -72,6 +79,7 @@ This is the core of logistic regression.
 
 # 5. Step 3 — Probability → Class
 To make a final decision:
+
 $$
 \hat{y} =
 \begin{cases}
@@ -86,21 +94,25 @@ Let:
 - $1 - p = P(y=0 \mid x)$  
 
 **Odds:**
+
 $$
 \text{odds} = \frac{p}{1-p}
 $$
 
 **Log-odds (logit):**
+
 $$
 \log\left( \frac{p}{1-p} \right)
 $$
 
 Logistic regression assumes:
+
 $$
 \log\left(\frac{p}{1-p}\right) = w^\top x + b
 $$
 
 Solving for $p$:
+
 $$
 p = \frac{1}{1 + e^{-(w^\top x + b)}}
 $$
