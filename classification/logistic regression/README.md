@@ -174,14 +174,18 @@ Intuition:
 For all $n$ samples:
 
 $$
-J(w,b) = \frac{1}{n} \sum_{i=1}^{n}
+J(w,b)
+=
+\frac{1}{n}
+\sum_{i=1}^{n}
 \left[
--\, y^{(i)} \log\left(p^{(i)}\right)
--\, \left(1 - y^{(i)}\right) \log\left(1 - p^{(i)}\right)
+-\, y^{(i)} \log\!\left(p^{(i)}\right)
+-\, \left(1 - y^{(i)}\right) \log\!\left(1 - p^{(i)}\right)
 \right]
 $$
 
 This is the **cost function** we minimize.
+
 
 
 ---
