@@ -44,9 +44,9 @@ Given two points:
 
 The Euclidean distance is:
 
-\[
+$$
 d(x, y) = \sqrt{(x_1 - y_1)^2 + (x_2 - y_2)^2 + \dots + (x_d - y_d)^2}
-\]
+$$
 
 This tells us:
 
@@ -60,9 +60,9 @@ Given a new sample \( x \):
 
 ### **Step 1 — Compute distances**
 
-\[
+$$
 d_i = d(x, x^{(i)})
-\]
+$$
 
 for all training samples.
 
@@ -77,9 +77,9 @@ If most neighbors are labeled **0**, predict **0**.
 
 Mathematically:
 
-\[
+$$
 \hat{y} = \text{mode}(y^{(1)}, y^{(2)}, ..., y^{(k)})
-\]
+$$
 
 ---
 
