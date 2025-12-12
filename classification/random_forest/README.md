@@ -6,7 +6,6 @@ The goal is to understand exactly how Random Forest works under the hood:
 *   How trees are built.
 *   How randomness helps (Bagging).
 *   How predictions combine.
-*   How we evaluate the model (Accuracy, Confusion Matrix, ROC–AUC).
 
 **Random Forest is one of the most powerful algorithms for tabular classification.**
 
