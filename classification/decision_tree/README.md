@@ -86,7 +86,7 @@ A decision tree is built recursively.
 
 The predicted label of a leaf is the majority class:
 
-$$ \text{leaf\_value} = \operatorname{argmax}(\text{count of each class}) $$
+$$ \text{leaf\_value} = \text{argmax}(\text{count of each class}) $$
 
 **If not a leaf:**
 1.  Find the best feature and threshold.
