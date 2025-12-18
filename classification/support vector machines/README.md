@@ -58,19 +58,21 @@ This ensures the simplest, cleanest possible boundary (Regularization).
 
 ---
 
-## 4. 🧩 Perfect Separation (Ideal Case)
+## 4. Perfect Separation (Ideal Case)
 
 If data is perfectly separable, we want all points to satisfy:
 
 $$ y_i (w^T x_i + b) \geq 1 $$
 
 Points that satisfy the equality exactly:
+
 $$ y_i (w^T x_i + b) = 1 $$
+
 are called **Support Vectors**. These are the specific data points that "hold up" or define the boundary.
 
 ---
 
-## 5. 💥 Real Life: Soft-Margin SVM
+## 5. Real Life: Soft-Margin SVM
 
 Real data is messy and rarely perfectly separable. SVM handles this by introducing **Hinge Loss**:
 
@@ -86,7 +88,7 @@ $$ \max(0, \ 1 - y_i(w^T x_i + b)) $$
 
 ---
 
-## 6. 🎯 Full SVM Loss Function
+## 6. Full SVM Loss Function
 
 The total cost function combines "keeping weights small" (Regularization) and "reducing mistakes" (Hinge Loss):
 
@@ -98,7 +100,7 @@ $$ L = \frac{1}{2} \|w\|^2 + C \sum_{i=1}^{n} \max(0, \ 1 - y_i(w^T x_i + b)) $$
 
 ---
 
-## 7. 🔮 Final Prediction Rule
+## 7. Final Prediction Rule
 
 Once trained, for any new $x$:
 
@@ -106,7 +108,7 @@ $$ \hat{y} = \text{sign}(w^T x + b) $$
 
 ---
 
-## 8. 🔥 GRADIENT UPDATE FOR SVM
+## 8. GRADIENT UPDATE FOR SVM
 
 This is the logic used inside the `fit` method. We use **Gradient Descent** to minimize the loss.
 
@@ -116,11 +118,12 @@ $$ y_i (w^T x_i + b) \geq 1 $$
 
 There are two cases:
 
-### ✅ Case 1: Margin $\geq$ 1 (Correct & Safe)
+### Case 1: Margin $\geq$ 1 (Correct & Safe)
 The point is correctly classified and far enough away. No hinge loss applies.
 The gradient comes **only** from the regularization term $\|w\|^2$.
 
 $$ dw = 2\lambda w $$
+
 $$ db = 0 $$
 
 **In Code:**
