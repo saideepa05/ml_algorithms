@@ -9,7 +9,7 @@ This README explains the intuition, mathematics, learning rule, hinge loss, and 
 
 ---
 
-## 1. 🌟 What SVM Does
+## 1. What SVM Does
 
 SVM is a binary classifier that tries to separate two classes using a:
 *   **Line** (2D)
@@ -29,7 +29,7 @@ SVM wants to find the **best boundary** — the one that maximizes the empty spa
 
 ---
 
-## 2. 🧱 The Decision Boundary
+## 2. The Decision Boundary
 
 The boundary is defined by:
 $$ w^T x + b = 0 $$
@@ -39,13 +39,15 @@ The regions are defined as:
 *   If $w^T x + b < 0 \Rightarrow$ Class **-1**
 
 So the final prediction is:
+
 $$ \hat{y} = \text{sign}(w^T x + b) $$
 
 ---
 
-## 3. 📏 The Margin — The Heart of SVM
+## 3. The Margin — The Heart of SVM
 
 The size of the margin is:
+
 $$ \text{margin} = \frac{2}{\|w\|} $$
 
 SVM wants to **maximize the margin**, which is mathematically equivalent to **minimizing the weights**:
