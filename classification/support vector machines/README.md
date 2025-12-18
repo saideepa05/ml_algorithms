@@ -126,8 +126,11 @@ $$ dw = 2\lambda w $$
 
 $$ db = 0 $$
 
-**In Code:**
-```python
-if condition:
-    dw = 2 * self.lambda_param * self.w
-    db = 0
+
+### Case 2: Margin < 1 (Wrong or Too Close)
+The point is either an error or inside the margin. Hinge loss is active.
+We must fix the weights to correct this point **AND** apply regularization.
+
+$$ dw = 2\lambda w - y_i x_i $$
+
+$$ db = -y_i $$
