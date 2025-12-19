@@ -27,7 +27,7 @@ $$ P(y=1|x) = \sigma(F(x)) = \frac{1}{1 + e^{-F(x)}} $$
 
 **Final Prediction:**
 
-$$ \hat{y} = \begin{cases} 1 & \text{if } P(y=1|x) \geq 0.5    \\ 0 & \text{otherwise} \end{cases} $$
+$$ \hat{y} = \begin{cases} 1 & \text{if } P(y=1|x) \geq 0.5  \\\\ 0 & \text{otherwise} \end{cases} $$
 
 ---
 
