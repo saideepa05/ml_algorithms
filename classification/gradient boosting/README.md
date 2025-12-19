@@ -123,18 +123,15 @@ $$ c = \text{mean}(r_i) $$
 For $m = 1 \dots M$:
 
 1.  **Compute Probabilities:**
-   
     $$ p_i = \sigma(F_{m-1}(x_i)) $$
 
-3.  **Compute Residuals:**
-   
+2.  **Compute Residuals:**
     $$ r_i = y_i - p_i $$
 
-5.  **Fit a Weak Learner:**
+3.  **Fit a Weak Learner:**
     Train a decision stump on the dataset $\{(x_i, r_i)\}$ to find the best split.
 
-6.  **Update Model:**
-   
+4.  **Update Model:**
     $$ F_m(x) = F_{m-1}(x) + \eta f_m(x) $$
 
 Each step reduces the loss greedily.
