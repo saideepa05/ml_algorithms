@@ -55,24 +55,21 @@ Where $\alpha$ is the **Learning Rate**.
 
 ### Deriving the Gradients
 First, define the error vector:
-$$ e = \hat{y} - y = (Xw + b) - y $$
+$$ 
+e = \hat{y} - y = (Xw + b) - y 
+$$
 
 The gradients for MSE are derived as:
 
 **Gradient w.r.t Weights ($w$):**
-$$ \frac{\partial J}{\partial w} = \frac{2}{n} X^T (\hat{y} - y) $$
+$$ 
+\frac{\partial J}{\partial w} = \frac{2}{n} X^T (\hat{y} - y) 
+$$
 
 **Gradient w.r.t Bias ($b$):**
-$$ \frac{\partial J}{\partial b} = \frac{2}{n} \sum_{i=1}^{n} (\hat{y}_i - y_i) $$
-
-### Implementation in Code
-This math translates directly into NumPy code:
-```python
-dw = (2/n) * np.dot(X.T, (y_pred - y))
-db = (2/n) * np.sum(y_pred - y)
-
-self.w -= self.lr * dw
-self.b -= self.lr * db
+$$ 
+\frac{\partial J}{\partial b} = \frac{2}{n} \sum_{i=1}^{n} (\hat{y}_i - y_i) 
+$$
 
 
 ---
