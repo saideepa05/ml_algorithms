@@ -54,6 +54,7 @@ Where:
 ## 4. Gradient Derivation
 
 To optimize the model, we use Gradient Descent. First, define the error vector:
+
 $$ e = \hat{y} - y $$
 
 **Gradient w.r.t Weights ($w$):**
