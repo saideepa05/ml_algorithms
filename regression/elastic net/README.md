@@ -55,7 +55,9 @@ Because of the L1 term ($|w_j|$), the derivative is undefined at 0. Therefore, w
 **Soft-Thresholding Operator:**
 This operator shrinks values towards zero and sets them exactly to zero if they are within the threshold $\gamma$.
 
-$$ S(z, \gamma) = \begin{cases} z - \gamma & \text{if } z > \gamma \\ 0 & \text{if } |z| \leq \gamma \\ z + \gamma & \text{if } z < -\gamma \end{cases} $$
+$$ S(z, \gamma) = \begin{cases} z - \gamma & \text{if } z > \gamma \\ 
+0 & \text{if } |z| \leq \gamma \\
+z + \gamma & \text{if } z < -\gamma \end{cases} $$
 
 ---
 
