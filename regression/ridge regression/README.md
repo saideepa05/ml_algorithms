@@ -73,9 +73,15 @@ $$ \frac{\partial J}{\partial b} = \frac{2}{n} \sum_{i=1}^{n} e_i $$
 Ridge Regression is trained using **Batch Gradient Descent**. The update rules are:
 
 **Update Weights:**
-$$ w \leftarrow w - \alpha \left( \frac{2}{n} X^T e + 2\lambda w \right) $$
+
+$$
+w \leftarrow w - \alpha \left( \frac{2}{n} X^T e + 2\lambda w \right) 
+$$
 
 **Update Bias:**
-$$ b \leftarrow b - \alpha \left( \frac{2}{n} \sum e_i \right) $$
+
+$$ 
+b \leftarrow b - \alpha \left( \frac{2}{n} \sum e_i \right) 
+$$
 
 Where $\alpha$ is the learning rate.
