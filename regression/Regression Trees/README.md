@@ -31,7 +31,7 @@ if area <= 1200:
         predict 210,000
 else:
     predict 350,000
-
+```
 ---
 
 ## 3. Loss Function (MSE)
