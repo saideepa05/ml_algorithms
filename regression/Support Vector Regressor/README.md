@@ -18,7 +18,7 @@ The goal is to find a function that is "flat" (small $\|w\|$) while ensuring tha
 
 SVR ignores small errors. If the prediction is close enough to the actual value (within a margin $\epsilon$), the loss is zero.
 
-$$ L_\epsilon((y, f(x)) = \max(0, \ |y - f(x)| - \epsilon) $$
+$$ L_\epsilon(y, f(x)) = \max(0, \ |y - f(x)| - \epsilon) $$
 
 **Interpretation:**
 *   If error $\le \epsilon \rightarrow$ Loss = 0 (Safe zone).
