@@ -32,7 +32,9 @@ This makes SVR robust to noise and focuses only on significant errors.
 
 To allow for some errors (soft margin), SVR introduces slack variables $\xi_i, \xi_i^*$ and minimizes:
 
-$$ \min_{w, b, \xi, \xi^*} \frac{1}{2} \|w\|^2 + C \sum_{i=1}^{n} (\xi_i + \xi_i^*) $$
+$$ 
+\min_{w, b, \xi, \xi^*} \frac{1}{2} \|w\|^2 + C \sum_{i=1}^{n} (\xi_i + \xi_i^*) 
+$$
 
 **Subject to:**
 1.  $y_i - (w^T x_i + b) \le \epsilon + \xi_i$
