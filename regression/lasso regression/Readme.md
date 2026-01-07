@@ -55,7 +55,9 @@ This is the mathematical operation that determines the new weight. It shrinks th
 
 For a specific value $z$ and threshold $\gamma$, the operator $S(z, \gamma)$ is:
 
-$$ S(z, \gamma) = \begin{cases} z - \gamma & \text{if } z > \gamma \\ 0 & \text{if } |z| \leq \gamma \\ z + \gamma & \text{if } z < -\gamma \end{cases} $$
+$$ S(z, \gamma) = \begin{cases} z - \gamma & \text{if } z > \gamma \\ 
+0 & \text{if } |z| \leq \gamma \\ 
+z + \gamma & \text{if } z < -\gamma \end{cases} $$
 
 **Intuition:**
 *   If the weight is large and positive, subtract a little bit.
