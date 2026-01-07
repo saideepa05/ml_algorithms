@@ -43,7 +43,6 @@ $$ \min_{w, b, \xi, \xi^*} \frac{1}{2} \|w\|^2 + C \sum_{i=1}^{n} (\xi_i + \xi_i
 *   **$\frac{1}{2} \|w\|^2$:** Regularization term (encourages a flat function).
 *   **$C$:** Penalty parameter. Bigger $C$ = Stricter fit (less tolerance for errors outside the tube).
 *   **$\epsilon$:** Tube width. Bigger $\epsilon$ = More tolerance (wider safety zone).
-
 ---
 
 ## 4. Equivalent Unconstrained Objective
