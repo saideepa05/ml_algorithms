@@ -24,7 +24,9 @@ For every point in the dataset, we classify it into one of three categories:
 
 ### A. Core Point
 A point $p$ is a **Core Point** if there are at least $MinPts$ within its $\epsilon$-neighborhood (including itself).
+
 $$ |N_\epsilon(p)| \ge MinPts $$
+
 where $N_\epsilon(p) = \{ q \in D \mid \text{dist}(p, q) \le \epsilon \}$.
 
 ### B. Border Point
