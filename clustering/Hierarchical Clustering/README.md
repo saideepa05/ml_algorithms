@@ -23,16 +23,21 @@ To measure the distance between two clusters (sets of points) $A$ and $B$, we us
 
 ### Single Linkage (Min Distance)
 Distance between the *closest* pair of points in the two clusters.
+
 $$ D(A, B) = \min \{ d(a, b) : a \in A, b \in B \} $$
+
 *   *Effect:* Can result in long, "chain-like" clusters.
 
 ### Complete Linkage (Max Distance)
 Distance between the *farthest* pair of points in the two clusters.
+
 $$ D(A, B) = \max \{ d(a, b) : a \in A, b \in B \} $$
+
 *   *Effect:* Tends to find compact, spherical clusters.
 
 ### Average Linkage
 Average distance between all pairs of points in the two clusters.
+
 $$ D(A, B) = \frac{1}{|A| \cdot |B|} \sum_{a \in A} \sum_{b \in B} d(a, b) $$
 
 ### Ward's Method
@@ -44,6 +49,7 @@ Minimizes the increase in total **within-cluster variance** after merging. This 
 
 ### Step 1: Initialization
 Start with $N$ clusters, where every data point is its own cluster.
+
 $$ \{x_1\}, \{x_2\}, ..., \{x_N\} $$
 
 ### Step 2: Distance Matrix
@@ -51,6 +57,7 @@ Calculate the pairwise distance between all active clusters using the chosen Lin
 
 ### Step 3: Merge
 Find the pair of clusters $(C_i, C_j)$ with the **minimum distance**. Merge them into a new single cluster.
+
 $$ C_{new} = C_i \cup C_j $$
 
 ### Step 4: Iteration
