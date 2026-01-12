@@ -20,11 +20,14 @@ $X = \frac{X - \mu}{\sigma}$
 
 ### Step 2: Compute the Covariance Matrix
 The covariance matrix $C$ represents how features vary together:
+
 $$ C = \frac{1}{n-1} X^T X $$
 
 ### Step 3: Eigen-Decomposition
 We find the eigenvalues ($\lambda$) and eigenvectors ($v$) that satisfy:
+
 $$ Cv = \lambda v $$
+
 *   **Eigenvalues:** Represent the amount of variance captured by each principal component.
 *   **Eigenvectors:** Define the direction of the new axes.
 
@@ -33,12 +36,14 @@ Sort eigenvectors by their eigenvalues in descending order. Pick the top $k$ eig
 
 ### Step 5: Projection
 Project the original data onto the new subspace:
+
 $$ X_{new} = X \cdot W $$
 
 ---
 
 ## 3. Explained Variance
 To determine how many components to keep, we calculate the **Explained Variance Ratio**:
+
 $$ \text{Ratio}_i = \frac{\lambda_i}{\sum \lambda} $$
 
 ---
