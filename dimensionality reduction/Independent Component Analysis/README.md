@@ -14,6 +14,7 @@ ICA assumes:
 3.  The mixing matrix is linear.
 
 $$ x = As $$
+
 where $x$ is the observed data, $A$ is the mixing matrix, and $s$ are the independent sources.
 
 ---
@@ -23,11 +24,14 @@ Before running the main ICA algorithm (like FastICA), we must prepare the data:
 
 ### Centering
 Subtract the mean to make the data zero-mean.
+
 $$ x = x - E[x] $$
 
 ### Whitening
 Transform the data so that its components are uncorrelated and have unit variance. This simplifies the search for independent components to a search for a rotation.
+
 $$ \tilde{x} = ExD^{-1/2}E^T x $$
+
 where $E$ is the matrix of eigenvectors of the covariance matrix and $D$ is the diagonal matrix of eigenvalues.
 
 ---
@@ -48,6 +52,7 @@ Common contrast functions $g(u)$:
 
 ## 4. Multiple Components (Orthogonalization)
 To find $n$ components, we ensure each new vector $w_p$ is orthogonal to the previously found vectors $w_1, \dots, w_{p-1}$:
+
 $$ w_p = w_p - \sum_{j=1}^{p-1} (w_p^T w_j) w_j $$
 
 ---
