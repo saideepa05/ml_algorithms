@@ -53,15 +53,15 @@ $$ \gamma(z_{nk}) = \frac{\pi_k \mathcal{N}(x_n|\mu_k, \Sigma_k)}{\sum_{j=1}^{K}
 Update the parameters using the responsibilities calculated in the E-Step.
 
 *   **New Means:** Weighted average of points.
-*   
+ 
     $$ \mu_k^{new} = \frac{1}{N_k} \sum_{n=1}^{N} \gamma(z_{nk}) x_n $$
     
 *   **New Covariances:** Weighted variance.
-*   
+ 
     $$ \Sigma_k^{new} = \frac{1}{N_k} \sum_{n=1}^{N} \gamma(z_{nk}) (x_n - \mu_k^{new})(x_n - \mu_k^{new})^T $$
     
 *   **New Mixing Coefficients:** Fraction of total weight.
-*   
+
     $$ \pi_k^{new} = \frac{N_k}{N} $$
 
 Where $N_k = \sum_{n=1}^{N} \gamma(z_{nk})$.
