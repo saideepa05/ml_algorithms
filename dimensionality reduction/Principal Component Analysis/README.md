@@ -15,7 +15,9 @@ PCA transforms a set of $d$ correlated variables into a smaller set of $k$ uncor
 ## 2. The Step-by-Step Math
 
 ### Step 1: Standardize the Data
-$X = \frac{X - \mu}{\sigma}$  
+
+$X = \frac{X - \mu}{\sigma}$ 
+
 *Note: In the implementation, we focus on centering ($X - \mu$).*
 
 ### Step 2: Compute the Covariance Matrix
