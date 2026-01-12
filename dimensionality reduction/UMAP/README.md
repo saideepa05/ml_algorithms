@@ -12,18 +12,23 @@ UMAP assumes the data is uniformly distributed on a local manifold. It builds a 
 
 ### Local Connectivity
 For each point $x_i$, we find its $k$ nearest neighbors. The weight of an edge $(x_i, x_j)$ is:
+
 $$ p_{j|i} = \exp\left( -\frac{\max(0, d(x_i, x_j) - \rho_i)}{\sigma_i} \right) $$
+
 where $\rho_i$ is the distance to the nearest neighbor (to ensure connectivity) and $\sigma_i$ is a scaling factor adapted to the local density.
 
 ### Symmetrization
 We combine weights to form a high-dimensional probability matrix $P$:
+
 $$ p_{ij} = p_{j|i} + p_{i|j} - p_{j|i} p_{i|j} $$
 
 ---
 
 ## 2. Low-Dimensional Affinities
 In the embedding space $Y$, similarities are defined by a curve that looks like a heavy-tailed Student-t distribution but is optimized for faster calculation:
+
 $$ q_{ij} = \left( 1 + a(\|y_i - y_j\|^2)^b \right)^{-1} $$
+
 (Commonly $a=1, b=1$ is used for simplicity).
 
 ---
