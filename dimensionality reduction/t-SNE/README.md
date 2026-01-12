@@ -11,8 +11,11 @@ Map high-dimensional data into 2D or 3D space such that similar points in high-D
 We start by converting Euclidean distances between data points in high-dimensional space into conditional probabilities that represent similarities.
 
 For two points $x_i$ and $x_j$, the probability $p_{j|i}$ is high if the points are neighbors:
+
 $$ p_{j|i} = \frac{\exp(-\|x_i - x_j\|^2 / 2\sigma_i^2)}{\sum_{k \neq i} \exp(-\|x_i - x_k\|^2 / 2\sigma_i^2)} $$
+
 We then define symmetric probabilities:
+
 $$ p_{ij} = \frac{p_{j|i} + p_{i|j}}{2n} $$
 
 ---
