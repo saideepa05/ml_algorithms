@@ -9,6 +9,7 @@ Decompose a data matrix $A$ into three distinct matrices that reveal the underly
 
 ## 1. The Matrix Factorization
 For any $m \times n$ matrix $A$, SVD states that:
+
 $$ A = U \Sigma V^T $$
 
 Where:
