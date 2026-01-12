@@ -18,7 +18,7 @@ PCA transforms a set of $d$ correlated variables into a smaller set of $k$ uncor
 
 $X = \frac{X - \mu}{\sigma}$ 
 
-*Note: In the implementation, we focus on centering ($X - \mu$).*
+Note: In the implementation, we focus on centering ($X - \mu$).
 
 ### Step 2: Compute the Covariance Matrix
 The covariance matrix $C$ represents how features vary together:
